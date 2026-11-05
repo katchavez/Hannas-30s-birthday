@@ -1,0 +1,298 @@
+
+/* ALLMÄNT */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: Georgia, serif;
+    background-color: #0B0B0F;
+    color: #F5E6C8;
+    overflow-x: hidden;
+}
+
+/* HEADER BILD */
+.hero {
+    height: 500px;
+    width: 100%;
+    background-image:
+        linear-gradient(rgba(11,11,15,0.25), rgba(11,11,15,0.45)),
+        url("header.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.hero-content h1 {
+    font-size: 70px;
+    color: #D4AF37;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 26px;
+    margin-bottom: 30px;
+}
+
+.hero-btn {
+    background-color: #D4AF37;
+    color: #0B0B0F;
+    padding: 14px 30px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+/* NAVIGATION */
+nav {
+    background-color: #111;
+    padding: 18px;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #F5E6C8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #D4AF37;
+}
+
+/* BAKGRUND */
+.bakgrund {
+    flex: 1;
+    width: 100%;
+    min-height: 100vh;
+    background-image:
+        linear-gradient(rgba(5,5,15,0.65), rgba(5,5,15,0.85)),
+        url("Stjärnhimmel.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 60px 20px;
+}
+
+/* KONTAKTBEHÅLLARE */
+.kontakt-bildbox {
+    position: relative;
+    width: 900px;
+    max-width: 100%;
+    margin: auto;
+}
+
+/* PERGAMENTBILD */
+.kontakt-bild {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* TEXT OVANPÅ PERGAMENTET */
+.kontakt-text {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 70%;
+    box-sizing: border-box;
+
+    color: #2b1b0f;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+}
+
+/* KONTAKTINFORMATION */
+.person {
+    margin-bottom: 30px;
+}
+
+.person h2 {
+    font-size: 30px;
+    margin: 0 0 25px;
+}
+
+.person p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 15px 0;
+    overflow-wrap: anywhere;
+}
+
+/* FOOTER */
+.footer {
+    width: 100%;
+    flex-shrink: 0;
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #111;
+    border-top: 1px solid rgba(212,175,55,0.3);
+    color: #F5E6C8;
+    margin-top: 0;
+}
+
+.footer p {
+    margin: 10px 0;
+}
+
+.footer a {
+    color: #D4AF37;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #F5E6C8;
+}
+
+
+/* SURFPLATTA */
+@media (max-width: 900px) {
+
+    .hero {
+        height: 350px;
+    }
+
+    nav ul {
+        gap: 25px;
+        flex-wrap: wrap;
+    }
+
+    .kontakt-bildbox {
+        width: 95%;
+    }
+
+    .kontakt-text {
+        top: 65%;
+        width: 35%;
+    }
+
+    .person h2 {
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+
+    .person p {
+        font-size: 15px;
+        margin: 10px 0;
+    }
+}
+
+/* MOBIL */
+@media (max-width: 600px) {
+
+    .hero {
+        height: 220px;
+    }
+
+    nav {
+        padding: 15px 10px;
+    }
+
+    nav ul {
+        gap: 15px 20px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .bakgrund {
+        min-height: auto;
+        padding: 25px 10px;
+        background-attachment: scroll;
+    }
+
+    .kontakt-bildbox {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .kontakt-bild {
+        width: 100%;
+        height: auto;
+    }
+
+    .kontakt-text {
+        top: 60%;
+        width: 78%;
+    }
+
+    .person {
+        margin-bottom: 8px;
+    }
+
+    .person h2 {
+        font-size: clamp(13px, 3.5vw, 18px);
+        margin-bottom: 8px;
+    }
+
+    .person p {
+        font-size: clamp(9px, 2.5vw, 13px);
+        line-height: 1.35;
+        margin: 6px 0;
+        overflow-wrap: anywhere;
+    }
+
+    .footer {
+        padding: 25px 15px;
+    }
+}
+
+/* EXTRA SMÅ MOBILER */
+@media (max-width: 380px) {
+
+    nav ul {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    .kontakt-text {
+        top: 60%;
+        width: 78%;
+    }
+
+    .person h2 {
+        font-size: 12px;
+    }
+
+    .person p {
+        font-size: 9px;
+    }
+}

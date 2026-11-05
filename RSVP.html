@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSA – Hannas Magiska 30-årsfest</title>
+
+    <link rel="stylesheet" href="RSVP.css">
+</head>
+
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Startsida</a></li>
+            <li><a href="RSVP.html">RSVP</a></li>
+            <li><a href="Info.html">Info</a></li>
+            <li><a href="Önskelista.html">Önskelista</a></li>
+            <li><a href="Kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <div class="bakgrund">
+
+        <div class="rsvp-box">
+
+            <h1>OSA</h1>
+
+            <p>
+                En plats väntar vid festbordet på Hogwarts!
+                Meddela om du kommer att delta i Hannas magiska
+                30-årsfirande genom att fylla i formuläret nedan.
+                <br><br>
+                <strong>Sänd din uggla senast den 13 februari 2027.</strong>
+            </p>
+
+            <form action="https://formspree.io/f/mnpprpaq"
+                  method="POST">
+
+                <!-- Ämnesrad för mejlet -->
+                <input type="hidden"
+                       name="_subject"
+                       value="Ny OSA till Hannas 30-årsfest!">
+
+                <!-- Eget namn -->
+                <label for="namn">Namn *</label>
+
+                <input type="text"
+                       id="namn"
+                       name="Namn"
+                       required>
+
+                <!-- Telefonnummer -->
+                <label for="telefon">Telefonnummer</label>
+
+                <input type="tel"
+                       id="telefon"
+                       name="Telefonnummer">
+
+                <!-- Närvaro -->
+                <label>Kan du komma?</label>
+
+                <div class="radio-group">
+
+                    <label>
+                        <input type="radio"
+                               name="Svar"
+                               value="Jag kommer"
+                               required>
+                        Jag kommer
+                    </label>
+
+                    <label>
+                        <input type="radio"
+                               name="Svar"
+                               value="Jag kommer inte"
+                               required>
+                        Jag kommer inte
+                    </label>
+
+                </div>
+
+                <!-- Plus ett -->
+                <label class="plus-one-option">
+
+                    <input type="checkbox"
+                           id="plus-one"
+                           name="Tar med +1"
+                           value="Ja">
+
+                    Jag tar med en +1
+
+                </label>
+
+                <div id="plus-one-name-group" hidden>
+
+                    <label for="plus-one-name">
+                        Namn på din +1 *
+                    </label>
+
+                    <input type="text"
+                           id="plus-one-name"
+                           name="Namn på +1">
+
+                </div>
+
+                <!-- Allergier och specialkost -->
+                <label for="allergier">
+                    Allergier / Specialkost
+                </label>
+
+                <input type="text"
+                       id="allergier"
+                       name="Allergier och specialkost">
+
+                <!-- Önskelåt -->
+                <label for="lat">Önskelåt</label>
+
+                <input type="text"
+                       id="lat"
+                       name="Önskelåt">
+
+                <!-- Övrig information -->
+                <label for="info">Övrig information</label>
+
+                <textarea
+                    id="info"
+                    name="Övrig information"
+                    rows="6"
+                    placeholder="Har du något mer du vill meddela? Exempelvis barn som följer med."
+                ></textarea>
+
+                <!-- Skicka formuläret -->
+                <button type="submit">
+                    Sänd din uggla
+                </button>
+
+            </form>
+
+            <p class="contact-link">
+                Har du frågor?
+
+                Besök vår
+                <a href="Kontakt.html">kontaktsida</a>.
+            </p>
+
+        </div>
+
+    </div>
+
+    <footer class="footer">
+
+        <p>"Mischief Managed"</p>
+
+        <p>&copy; 2027 Hannas Magiska 30-årsfest</p>
+
+    </footer>
+
+    <script>
+
+        const plusOneCheckbox = document.getElementById("plus-one");
+        const plusOneNameGroup = document.getElementById("plus-one-name-group");
+        const plusOneName = document.getElementById("plus-one-name");
+
+        plusOneCheckbox.addEventListener("change", function() {
+
+            plusOneNameGroup.hidden = !this.checked;
+
+            plusOneName.required = this.checked;
+
+            if (!this.checked) {
+                plusOneName.value = "";
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
+

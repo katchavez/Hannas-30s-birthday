@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hannas Magiska 30-årsfest</title>
+
+    <link rel="stylesheet" href="Index.css">
+</head>
+
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Startsida</a></li>
+            <li><a href="RSVP.html">RSVP</a></li>
+            <li><a href="Info.html">Info</a></li>
+            <li><a href="Önskelista.html">Önskelista</a></li>
+            <li><a href="Kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <div class="bakgrund">
+
+        <div class="info-box">
+
+            <!-- Välkomsttext -->
+            <div class="welcome-text">
+
+                <h1>Välkommen till den magiska festen</h1>
+
+                <p>
+                    Välkommen till ett alldeles särskilt intagningstillfälle
+                    vid Hogwarts skola för häxkonster och trolldom - för att fira 
+                    Hannas 30:e födelsedag!
+                    <br><br>
+                    Den 13 mars 2027 öppnas portarna kl 17:00 till en kväll fylld av magi,
+                    mystik och förtrollande överaskningar. De yngsta häxorna och trollkarlarna
+                    är självklart välkomna att delta mellan 17:00-20:00. 
+                    <br><br>
+                    Förbered era trollstavar och lämna den vanliga världen bakom er - 
+                    ett magiskt äventyr väntar!
+                </p>
+
+            </div>
+
+            <!-- Time-Turner med nedräkning -->
+            <div class="timeturner-container">
+
+                <img src="Timeturner.png"
+                     alt="Magisk Time-Turner"
+                     class="timeturner-image">
+
+                <div id="countdown"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer class="footer">
+
+        <p>"Mischief Managed"</p>
+
+        <p>&copy; 2027 Hannas Magiska 30-årsfest</p>
+
+    </footer>
+
+    <!-- Nedräkning -->
+    <script>
+
+        const eventDate = new Date("March 13, 2027 17:00:00").getTime();
+
+        const countdown = setInterval(function() {
+
+            const now = new Date().getTime();
+
+            const distance = eventDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+            const hours = Math.floor(
+                (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+            );
+
+            const minutes = Math.floor(
+                (distance % (1000 * 60 * 60)) / (1000 * 60)
+            );
+
+            const seconds = Math.floor(
+                (distance % (1000 * 60)) / 1000
+            );
+
+            document.getElementById("countdown").innerHTML =
+                days + " dagar • " +
+                hours + " timmar • " +
+                minutes + " minuter • " +
+                seconds + " sekunder";
+
+            if (distance < 0) {
+
+                clearInterval(countdown);
+
+                document.getElementById("countdown").innerHTML =
+                    "✨ Festen har börjat! ✨";
+
+            }
+
+        }, 1000);
+
+    </script>
+
+</body>
+</html>
+
